@@ -52,6 +52,7 @@ class RecipeViewsTest(TestCase):
         response = self.client.get(reverse('recipes:home'))
         content = response.content.decode('utf-8')
         self.assertIn(recipe.title, content)
+        self.assertIn(recipe.slug, content)
         pass
 
     def test_recipe_category_view_function_is_correct(self):
