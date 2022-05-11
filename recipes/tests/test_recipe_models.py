@@ -55,3 +55,6 @@ class RecipeModelTest(RecipeTestBase):
         recipe = self.make_recipe_no_default()
         self.assertFalse(recipe.is_published,
                          msg='Preparation steps is html is not False')
+
+    def test_recipe_string_representation(self):
+        self.assertEqual(str(self.recipe), self.recipe.title)
