@@ -10,5 +10,5 @@ urlpatterns = [
     path('recipes/<int:id>/', views.recipe, name="recipe"),
     path('recipes/category/<int:category_id>/',
          views.category, name="category"),
-
+    path('recipes/search/', lambda requet:..., name='search'),
 ]
