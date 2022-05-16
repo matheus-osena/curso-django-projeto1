@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import get_list_or_404, get_object_or_404, render
@@ -10,7 +11,10 @@ from .models import Recipe
 def home(request):
     recipes = Recipe.objects.filter(is_published=True).order_by('-id')
 
-    return render(request, 'recipes/pages/home.html', context={"recipes": recipes, })  # noqa: E501
+    paginator = Paginator(recipes, 9)
+    page_obj = paginator.get_page(1)
+
+    return render(request, 'recipes/pages/home.html', context={"recipes": page_obj, })  # noqa: E501
 
 
 def category(request, category_id):
