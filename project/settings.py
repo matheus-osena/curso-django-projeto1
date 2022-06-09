@@ -136,9 +136,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MESSAGE_TAGS = {
-    constants.DEBUG: "message-debug",
-    constants.ERROR: "message-error",
-    constants.INFO: "message-info",
-    constants.SUCCESS: "message-success",
-    constants.WARNING: "message-warning",
+    constants.DEBUG: 'message-debug',
+    constants.ERROR: 'message-error',
+    constants.INFO: 'message-info',
+    constants.SUCCESS: 'message-success',
+    constants.WARNING: 'message-warning',
 }
