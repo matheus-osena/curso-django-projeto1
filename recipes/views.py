@@ -18,6 +18,7 @@ def home(request):
 
     page_obj, pagination_range = make_pagination(request, recipes, PER_PAGE)
 
+    messages.success(request, "QUE LEGAL, FOI UM SUCESSO!")
     return render(request, 'recipes/pages/home.html', context={"recipes": page_obj, 'pagination_range': pagination_range})  # noqa: E501
 
 
@@ -39,8 +40,6 @@ def recipe(request, id):
 
 
 def search(request):
-
-    messages.success(request, "QUE LEGAL, FOI UM SUCESSO!")
 
     search_term = request.GET.get('q', '').strip()
     if not search_term:
